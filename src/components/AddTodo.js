@@ -3,17 +3,19 @@ import React, { useContext, useEffect, useRef } from "react";
 import { allData } from "../App"; // Importing the context that stores all application data
 import AddTodoButton from "./AddTodoButton"; // Importing the AddTodoButton component
 
+
+ // useEffect hook to focus the input field when the component mounts or when 'addTodo' changes
+ useEffect(() => {
+  if (!allStoreData.addTodo) {
+    inputRef.current.focus(); // Focus the input field if 'addTodo' is false
+  }
+}, [allStoreData.addTodo]);
+
 // The AddTodo component is responsible for rendering the form to add a new todo item
 const AddTodo = ({ cancelTodo, onChange, onKeyPress }) => {
   const allStoreData = useContext(allData); // Using context to get application data
   const inputRef = useRef(null); // Creating a reference to the input field
 
-  // useEffect hook to focus the input field when the component mounts or when 'addTodo' changes
-  useEffect(() => {
-    if (!allStoreData.addTodo) {
-      inputRef.current.focus(); // Focus the input field if 'addTodo' is false
-    }
-  }, [allStoreData.addTodo]);
 
   return (
     <>
