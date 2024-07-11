@@ -1,14 +1,16 @@
 import { Button, Stack } from "@mui/material";
 import React from "react";
 
+
+// Function to handle click events on the filter buttons
+const handleFilterClick = (filter) => {
+  setTodoType(filter); // Set the selected filter type
+};
+
 // The Filter component is responsible for rendering filter buttons to filter todo items
 const Filter = ({ todoType, setTodoType }) => {
   const filters = ["all", "completed", "incompleted"]; // Array of filter types
 
-  // Function to handle click events on the filter buttons
-  const handleFilterClick = (filter) => {
-    setTodoType(filter); // Set the selected filter type
-  };
 
   return (
     <Stack
