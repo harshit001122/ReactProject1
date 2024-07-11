@@ -1,0 +1,13 @@
+body {
+    font-family: 'SFProDisplay', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  header {
+    background-color: #4caf50; /* Green color for the header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
